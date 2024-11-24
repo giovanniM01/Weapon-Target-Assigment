@@ -1,0 +1,69 @@
+Weapon Target Assignment Problem (WTAP)
+========================================
+
+Este proyecto implementa el algoritmo de Simulated Annealing (SA) para resolver 
+el problema de asignación de armas a objetivos (WTAP), utilizando una solución 
+inicial generada por un enfoque Greedy.
+
+Contenido del repositorio
+-------------------------
+- Código fuente:
+  - `swap.cpp`: Implementación del algoritmo Simulated Annealing.
+  - `greedy.cpp` y `greedy.h`: Implementación del enfoque Greedy.
+  - `utils.h`: Funciones auxiliares para la lectura de instancias.
+- Instancias del problema: Archivos como `wta10.txt`, `wta50.txt`, etc., contienen 
+  las instancias de prueba.
+- `Makefile`: Archivo para compilar el proyecto.
+
+Requisitos previos
+------------------
+Asegúrate de tener instalado un compilador compatible con C++17, como `g++`. 
+Este proyecto ha sido probado en un entorno Linux.
+
+Cómo compilar el proyecto
+-------------------------
+1. Abre una terminal en la carpeta raíz del proyecto.
+2. Ejecuta el siguiente comando para compilar:
+
+   make
+
+   Esto generará un ejecutable llamado `swap`.
+
+3. Si deseas limpiar los archivos compilados, utiliza:
+
+   make clean
+
+Cómo ejecutar el proyecto
+-------------------------
+El programa requiere varios parámetros para ejecutarse. El formato general del 
+comando es:
+
+   ./swap T0 alpha iter_max archivo_instancia
+
+Donde:
+- `T0`: Temperatura inicial para el algoritmo de Simulated Annealing (ejemplo: 50).
+- `alpha`: Factor de enfriamiento (ejemplo: 0.9).
+- `iter_max`: Número máximo de iteraciones (ejemplo: 50).
+- `archivo_instancia`: Ruta al archivo de instancia del problema (ejemplo: wta50.txt).
+
+Ejemplo de ejecución
+--------------------
+Para ejecutar el algoritmo con una temperatura inicial de 50, un factor de 
+enfriamiento de 0.9, un máximo de 50 iteraciones, y utilizando la instancia 
+`wta50.txt`:
+
+   ./swap 50 0.9 50 wta50.txt
+
+La salida mostrará resultados como:
+
+   Danio total esperado Greedy: 427.045
+   tiempo greedy: 12345
+   Ejecución 1: T0=50, alpha=0.9, iter_max=50, daño_total=345.67, tiempo_us=56789
+   Ejecución 2: ...
+
+Notas adicionales
+-----------------
+- Las soluciones iniciales se generan utilizando el enfoque Greedy.
+- El algoritmo de Simulated Annealing se ejecuta cinco veces por defecto.
+- La métrica principal es el daño total esperado y su tiempo, que se calculan como parte del 
+  proceso.
